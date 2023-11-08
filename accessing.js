@@ -9,3 +9,5 @@ for(let element of sunElement) {
 }
 
 // Change the class of the second <li> from to "sun" to "cloudy"
+const liEls = document.getElementsByTagName('li');
+liEls[1].className = 'cloudy';
