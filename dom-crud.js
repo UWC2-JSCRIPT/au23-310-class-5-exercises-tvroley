@@ -16,7 +16,9 @@ lastP.insertAdjacentElement('afterend', aEl);
 
 // Access (read) the data-color attribute of the <img>,
 // log to the console
-
+const imageEl = document.getElementsByTagName('img')[0];
+const dataColor = imageEl.getAttribute('data-color');
+console.log(dataColor);
 
 // Update the third <li> item ("Turbocharged"), 
 // set the class name to "highlight"
