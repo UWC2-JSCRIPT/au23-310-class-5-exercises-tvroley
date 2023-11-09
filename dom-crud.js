@@ -22,7 +22,17 @@ console.log(dataColor);
 
 // Update the third <li> item ("Turbocharged"), 
 // set the class name to "highlight"
-
+const ulEl = document.getElementsByTagName('UL')[0];
+let currentLi = ulEl.firstElementChild;
+let highlighted = false;
+while(currentLi && !highlighted) {
+    if(currentLi.innerText === 'Turbocharged')
+    {
+        currentLi.className = 'highlight';
+        highlighted = true;
+    }
+    currentLi = currentLi.nextElementSibling;
+}
 
 // Remove (delete) the last paragraph
 // (starts with "Available for purchase now…")
