@@ -1,6 +1,12 @@
 // Given the <body> element as variable body,
 // access the <main> node and log to the console.
 const body = document.querySelector('body');
+const mainEl = body.getElementsByTagName('main')[0];
+let currentChild = mainEl.firstElementChild;
+while(currentChild) {
+    console.log(currentChild.innerText);
+    currentChild = currentChild.nextElementSibling;
+}
 
 // Given the <ul> element as variable ul,
 // access <body>  and log to the console.
