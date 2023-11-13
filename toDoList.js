@@ -10,13 +10,7 @@ ulEl.addEventListener('click', (e) => {
     liEl = e.target;
   }
 
-  const elClass = liEl.getAttribute('class');
-  
-  if(elClass === 'done') {
-    liEl.removeAttribute('class');
-  } else {
-    liEl.setAttribute('class', 'done');
-  }
+  liEl.classList.toggle('done');
 });
 
 // If a delete link is clicked, delete the li element / remove from the DOM
