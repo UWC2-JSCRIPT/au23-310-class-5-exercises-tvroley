@@ -2,15 +2,17 @@
 const ulEl = document.getElementsByTagName('ul')[0];
 ulEl.addEventListener('click', (e) => {
   const parent = e.target.parentElement;
-  let liEl = null;
+  let el = null;
   
   if(parent.tagName === 'LI') {
-    liEl = parent;
+    el = parent;
   } else if(e.target.tagName === 'LI') {
-    liEl = e.target;
+    el = e.target;
   }
 
-  liEl.classList.toggle('done');
+  if(el) {
+    el.classList.toggle('done');
+  }
 });
 
 // If a delete link is clicked, delete the li element / remove from the DOM
@@ -35,7 +37,7 @@ const addListItem = function(e) {
   const span = document.createElement('span');
   span.innerText = text;
   const deleteButton = document.createElement('a');
-  deleteButton.setAttribute('class', 'delete');
+  deleteButton.classList.add('delete');
   deleteButton.innerText = 'Delete';
   listEl.appendChild(span);
   listEl.appendChild(deleteButton);
