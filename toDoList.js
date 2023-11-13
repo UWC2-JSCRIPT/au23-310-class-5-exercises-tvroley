@@ -1,5 +1,5 @@
 // If an li element is clicked, toggle the class "done" on the <li>
-let ulEl = document.getElementsByTagName('ul')[0];
+const ulEl = document.getElementsByTagName('ul')[0];
 ulEl.addEventListener('click', (e) => {
   const parent = e.target.parentElement;
   if(parent.tagName === 'LI') {
@@ -13,7 +13,7 @@ ulEl.addEventListener('click', (e) => {
 ulEl.addEventListener('click', (e) => {
   e.stopPropagation();
   if(e.target.className === 'delete') {
-    let parent = e.target.parentElement;
+    const parent = e.target.parentElement;
     parent.remove();
   }
 });
@@ -27,4 +27,16 @@ const addListItem = function(e) {
   const text = input.value; // use this text to create a new <li>
 
   // Finish function here
+  const listEl = document.createElement('li');
+  const span = document.createElement('span');
+  span.innerText = text;
+  const deleteButton = document.createElement('a');
+  deleteButton.setAttribute('class', 'delete');
+  deleteButton.innerText = 'Delete';
+  listEl.appendChild(span);
+  listEl.appendChild(deleteButton);
+  ulEl.appendChild(listEl);
 };
+
+const addButton = document.getElementsByClassName('add-item')[0];
+addButton.addEventListener('click', addListItem);
