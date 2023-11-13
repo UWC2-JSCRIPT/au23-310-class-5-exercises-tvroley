@@ -13,3 +13,8 @@ moreInfoEl.addEventListener('click', (e) => {
 
 // When the bark button is clicked, should alert "Bow wow!"
 // Should *not* alert "meow"
+const dogButton = document.getElementById('dog');
+dogButton.addEventListener('click', (e) => {
+  e.stopPropagation();
+  alert('Bow wow!');
+});
