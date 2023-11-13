@@ -3,9 +3,9 @@ let ulEl = document.getElementsByTagName('ul')[0];
 ulEl.addEventListener('click', (e) => {
   const parent = e.target.parentElement;
   if(parent.tagName === 'LI') {
-    parent.className = 'done';
+    parent.setAttribute('class', 'done');
   } else if(e.target.tagName === 'LI') {
-    e.target.className = 'done';
+    e.target.setAttribute('class', 'done');
   }
 });
 
