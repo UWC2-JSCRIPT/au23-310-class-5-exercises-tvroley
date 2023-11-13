@@ -2,10 +2,20 @@
 const ulEl = document.getElementsByTagName('ul')[0];
 ulEl.addEventListener('click', (e) => {
   const parent = e.target.parentElement;
+  let liEl = null;
+  
   if(parent.tagName === 'LI') {
-    parent.setAttribute('class', 'done');
+    liEl = parent;
   } else if(e.target.tagName === 'LI') {
-    e.target.setAttribute('class', 'done');
+    liEl = e.target;
+  }
+
+  const elClass = liEl.getAttribute('class');
+  
+  if(elClass === 'done') {
+    liEl.removeAttribute('class');
+  } else {
+    liEl.setAttribute('class', 'done');
   }
 });
 
