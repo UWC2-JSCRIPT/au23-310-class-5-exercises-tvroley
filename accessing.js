@@ -3,8 +3,8 @@ const weatherHead = document.getElementById('weather-head');
 weatherHead.innerText = "February 10 Weather Forecast, Seattle";
 
 // Change the styling of every element with class "sun" to set the color to "orange"
-const sunElement = document.getElementsByClassName('sun');
-for(let element of sunElement) {
+const sunElements = document.getElementsByClassName('sun');
+for(let element of sunElements) {
     element.style.color = 'orange';
 }
 
@@ -16,7 +16,7 @@ let changedToCloudy = false;
 while(currentChild && !changedToCloudy) {
     if(currentChild.tagName === 'LI') {
         if(foundLi) {
-            currentChild.className = 'cloudy';
+            currentChild.setAttribute('class', 'cloudy');
             changedToCloudy = true;
         } else {
             foundLi = true;
