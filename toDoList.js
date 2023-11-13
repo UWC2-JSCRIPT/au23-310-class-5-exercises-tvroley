@@ -1,6 +1,22 @@
 // If an li element is clicked, toggle the class "done" on the <li>
+let ulEl = document.getElementsByTagName('ul')[0];
+ulEl.addEventListener('click', (e) => {
+  const parent = e.target.parentElement;
+  if(parent.tagName === 'LI') {
+    parent.className = 'done';
+  } else if(e.target.tagName === 'LI') {
+    e.target.className = 'done';
+  }
+});
 
 // If a delete link is clicked, delete the li element / remove from the DOM
+ulEl.addEventListener('click', (e) => {
+  e.stopPropagation();
+  if(e.target.className === 'delete') {
+    let parent = e.target.parentElement;
+    parent.remove();
+  }
+});
 
 // If an 'Add' link is clicked, adds the item as a new list item with
 // addListItem function has been started to help you get going!
