@@ -10,7 +10,7 @@ while(currentChild) {
     currentChild = currentChild.nextElementSibling;
 }
 const aEl = document.createElement('a');
-aEl.id = 'cta';
+aEl.setAttribute('id','cta');
 aEl.innerText = 'Buy Now!';
 lastP.insertAdjacentElement('afterend', aEl);
 
@@ -27,7 +27,7 @@ let currentLi = ulEl.firstElementChild;
 let highlighted = false;
 while(currentLi && !highlighted) {
     if(currentLi.innerText === 'Turbocharged') {
-        currentLi.className = 'highlight';
+        currentLi.classList.add('highlight');
         highlighted = true;
     }
     currentLi = currentLi.nextElementSibling;
